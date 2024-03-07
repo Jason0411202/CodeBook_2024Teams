@@ -5,7 +5,7 @@ typedef long long int llt;
 
 vector<llt> Dijkstra(vector<vector<pair<llt, llt>>>& graph, llt start) // graph 是 1-indexed, start 是起點
 {
-    vector<llt> ans(graph.size()+1, INF);
+    vector<llt> ans(graph.size(), INF);
     ans[start]=0; // 起點的距離設成 0，其他設成 INF
 
     priority_queue<pair<llt, llt>, vector<pair<llt, llt>>, greater<pair<llt, llt>>> pq; // {與 start 的距離, nodeID}
