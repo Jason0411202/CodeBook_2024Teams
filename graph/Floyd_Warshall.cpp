@@ -33,19 +33,3 @@ vector<vector<llt>> Floyd_Warshall(vector<vector<pair<llt, llt>>>& graph) //傳�
 
     return ans; // 回傳一個二維陣列，代表任兩點間的最短路徑
 }
-
-int main()
-{
-    vector<vector<pair<llt, llt>>> graph(3+1);
-    graph[2].push_back({3, -1});
-
-    vector<vector<llt>> ans=Floyd_Warshall(graph);
-    for(llt i=1;i<=3;i++)
-    {
-        for(llt j=1;j<=3;j++)
-        {
-            cout<<ans[i][j]<<" ";
-        }
-        cout<<endl;
-    }
-}
