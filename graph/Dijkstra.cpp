@@ -3,7 +3,7 @@ using namespace std;
 typedef long long int llt;
 #define INF 0x3f3f3f3f3f3f3f3f
 
-vector<llt> Dijkstra(vector<vector<pair<llt, llt>>>& graph, llt start) // graph 是 1-indexed
+vector<llt> Dijkstra(vector<vector<pair<llt, llt>>>& graph, llt start) // graph 是 1-indexed, start 是起點
 {
     vector<llt> ans(graph.size()+1, INF);
     ans[start]=0; // 起點的距離設成 0，其他設成 INF
