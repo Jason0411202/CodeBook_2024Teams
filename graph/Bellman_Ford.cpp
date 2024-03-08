@@ -16,6 +16,7 @@ vector<llt> Bellman_Ford(vector<pair<pair<llt, llt>, llt>>& edges, llt n, llt st
             llt v=edges[j].first.second;
             llt w=edges[j].second;                         // 當透過 uv 這條邊，能使得點 start 至點 v 的距離更短
             if(ans[u]!=INF) ans[v]=min(ans[v], ans[u]+w); // 且點 start 走的到點 u 時，更新其最短路徑
+            // (如果只想找 start 能走到的負環，則這個 if 需要保留，否則不用)
         }
     }
 
