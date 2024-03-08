@@ -3,7 +3,7 @@ using namespace std;
 typedef long long int llt;
 #define INF 0x3f3f3f3f3f3f3f3f
 
-vector<llt> Dijkstra(vector<vector<pair<llt, llt>>>& graph, llt start) // graph 是 1-indexed, start 是起點
+vector<llt> Dijkstra(vector<vector<pair<llt, llt>>>& graph, llt start) // graph 是 1-indexed
 {
     vector<llt> ans(graph.size(), INF);
     ans[start]=0; // 起點的距離設成 0，其他設成 INF
@@ -20,9 +20,9 @@ vector<llt> Dijkstra(vector<vector<pair<llt, llt>>>& graph, llt start) // graph 
 
         for(auto x: graph[Top.second]) // x: {相鄰點的 nodeID, 權重}
         {
-            if(ans[Top.second]+x.second<ans[x.first]) // 若能透過 Top 代表的點找到到其他點更短的路徑，則更新之
+            if(Top.first+x.second<ans[x.first]) // 若能透過 Top 代表的點找到到其他點更短的路徑，則更新之
             {
-                ans[x.first]=ans[Top.second]+x.second;
+                ans[x.first]=Top.first+x.second;
                 pq.push({ans[x.first], x.first});
             }
         }
